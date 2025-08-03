@@ -1,0 +1,40 @@
+{
+  "name": "inst-shared",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "proto"
+  ],
+  "scripts": {
+    "build": "webpack --config webpack.config.ts",
+    "prepublishOnly": "npm run build",
+    "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json,md}'"
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "@types/eslint__js": "^8.42.3",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-js": "github:eslint/js",
+    "eslint-plugin-prettier": "^5.0.0",
+    "globals": "^16.3.0",
+    "prettier": "^3.0.0",
+    "ts-proto": "^1.164.0",
+    "typescript": "^5.0.0",
+    "typescript-eslint": "^7.18.0",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4",
+    "ts-loader": "^9.5.1",
+    "@types/webpack": "^5.28.5",
+    "@types/node": "^20.14.10",
+    "ts-node": "^10.9.2",
+    "glob": "^10.4.5"
+  }
+}
