@@ -1,6 +1,6 @@
 {
   "name": "inst-shared",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -8,7 +8,7 @@
     "proto"
   ],
   "scripts": {
-    "patch": "npm version patch",
+    "patch": "npm version patch --force",
     "build": "webpack --config webpack.config.ts",
     "prepublishOnly": "npm run build && npm run patch",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json,md}'"
