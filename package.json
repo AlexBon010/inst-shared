@@ -1,5 +1,5 @@
 {
-  "name": "inst-shared",
+  "name": "inst-shared-yuio",
   "version": "1.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
