@@ -8,10 +8,6 @@
     "proto"
   ],
   "scripts": {
-    "patch": "npm version patch --no-git-tag-version",
-    "build": "webpack --config webpack.config.ts",
-    "prepublishOnly": "npm run build && npm run patch",
-    "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json,md}'"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0"
