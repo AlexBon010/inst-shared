@@ -7,6 +7,10 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    environment: packages
+    permissions:
+      id-token: write       
+      contents: read        
 
     steps:
       - name: Checkout code
@@ -16,6 +20,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          
+          registry-url: 'https://registry.npmjs.org'
+
       - name: Publish to npm
-        run: npm publish 
+        run: npm version patch && npm publish --provenance
