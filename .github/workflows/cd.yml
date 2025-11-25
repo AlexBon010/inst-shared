@@ -4,13 +4,14 @@ on:
   push:
     branches: [main]
 
+permissions:
+  id-token: write  
+  contents: read
+
 jobs:
   publish:
     runs-on: ubuntu-latest
-    environment: packages
-    permissions:
-      id-token: write       
-      contents: read        
+    environment: packages     
 
     steps:
       - name: Checkout code
@@ -21,8 +22,10 @@ jobs:
         with:
           node-version: 22
           registry-url: 'https://registry.npmjs.org'
+      - name: Update npm
+        run: npm install -g npm@latest
 
       - name: Publish to npm
-        run: npm version patch --no-git-tag-version && npm publish --provenance --access public
-        # env:
-        #   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          npm version patch --no-git-tag-version
+          npm publish --provenance
