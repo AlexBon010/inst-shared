@@ -1,12 +1,20 @@
 name: CD
 
 on:
+  pull_request:
+    branches: [main]
+
   push:
     branches: [main]
+
+permissions:
+  id-token: write  
+  contents: read
 
 jobs:
   publish:
     runs-on: ubuntu-latest
+    environment: packages     
 
     steps:
       - name: Checkout code
@@ -16,15 +24,4 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          registry-url: 'https://registry.npmjs.org/'
-
-      - name: Install dependencies
-        run: npm i
-
-      - name: Prepare for publishing
-        run: npm run prepublishOnly
-
-      - name: Publish to npm
-        run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          registry-url: 'https://registry.npmjs.org'

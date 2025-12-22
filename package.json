@@ -1,6 +1,6 @@
 {
-  "name": "inst-shared",
-  "version": "1.0.0",
+  "name": "inst-shared-yuio",
+  "version": "1.1.9",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -8,13 +8,13 @@
     "proto"
   ],
   "scripts": {
-    "patch": "npm version patch --no-git-tag-version",
-    "build": "webpack --config webpack.config.ts",
-    "prepublishOnly": "npm run build && npm run patch",
-    "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json,md}'"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlexBon010/inst-shared-l.git"
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
